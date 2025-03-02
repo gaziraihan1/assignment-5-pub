@@ -19,6 +19,90 @@
             <a id="home-page" class="text-white bg-blue-800 py-2.5 px-5 rounded cursor-pointer">Back to Desk</a>
         </nav>
     </header>
+    <main class="col-start-2 col-end-12 mt-8 flex flex-col gap-5"> 
+        <h1 class="mb-3 text-gray-700 text-3xl font-bold text-center">
+            Blog
+        </h1>
+        <div class="bg-white p-4 rounded-lg">
+            <h1 class="text-2xl font-bold pb-3 border-b border-dashed border-gray-300">
+                Question-1: What are the different ways to select an element in the DOM?
+            </h1>
+            <p class="text-base font-medium mt-3">
+                We can select HTML element using different ways, see most used. <br>
+                <span class="text-sm font-bold text-orange-900">
+                    -First of all we need to write (document.) before getting element
+                </span>
+                <ul class="pl-4 mt-2 text-slate-600 font-mono">
+                    <li>
+                        1. document.getElementsByTagName('element name')
+                    </li>
+                    <li>
+                        2. document.getElementsByClassName('class name')
+                    </li>
+                    <li>
+                        3. document.querySelectorAll('name')
+                    </li>
+                    <li>
+                        4. document.querySelector('name')
+                    </li>
+                    <li>
+                        5. document.getElementById('id name')
+                    </li>
+                    <li></li>
+                </ul>
+            </p>
+        </div>
+        <div class="bg-white p-4 rounded-lg">
+            <h1 class="text-2xl font-bold pb-3 border-b border-dashed border-gray-300">
+                Question-2: What is the difference between innerHTML, innerText, and textContent ?
+            </h1>
+            <p class="text-base font-medium mt-3">
+                The main difference between these is, <br>
+                <h5 class="pl-4 text-slate-700 font-mono">
+                    -innerHTML used to get access all of the content of an element including tags. <br>
+                    -innerText used to get the text access of an element. <br>
+                    -textContent used to get all text content of an element even the text content is hide.
+                </h5>
+            </p>
+        </div>
+        <div class="bg-white p-4 rounded-lg">
+            <h1 class="text-2xl font-bold pb-3 border-b border-dashed border-gray-300">
+                Question-3: What is event delegation in the DOM?
+            </h1>
+            <p class="text-base font-medium mt-3">
+               By adding a single event on parent element, Event delegation allowes us to handle events triggered on it's child elements, <br> we can avoid to write seperate event listener for each child,,
+               there is a property called (.target) helps us to write very less code but achieve much more.
+            </p>
+        </div>
+        <div class="bg-white p-4 rounded-lg">
+            <h1 class="text-2xl font-bold pb-3 border-b border-dashed border-gray-300">
+                Question-4: What is event bubbling in the DOM?
+            </h1>
+            <p  class="text-base font-medium mt-3">
+                Event bubbling is a process which one propagate child triggered event to upwards through DOM hierarchy, it's triggering untill reach the topmost element.
+            </p>
+        </div>
+        <div class="bg-white p-4 rounded-lg">
+            <h1 class="text-2xl font-bold pb-3 border-b border-dashed border-gray-300">
+                Question-5: How do you create, add, and remove elements using JavaScript?
+            </h1>
+            <p class="text-base font-medium mt-3">
+                Create element <br>
+                <span class="pl-4 text-slate-700 font-mono">
+                    const p = document.createElement('p');
+                </span> <br>
+                Add element <br>
+                <span class="pl-4 text-slate-700 font-mono">
+                    const div = document.querySelector('div'); <br>
+                    <span class="pl-4 text-slate-700 font-mono">div.appendhild(p);</span>
+                </span> <br>
+                Remove element <br>
+                <span class="pl-4 text-slate-700 font-mono">
+                    p.remove();
+                </span>
+            </p>
+        </div>
+    </main>
     <script src="script/blog.js"></script>
 </body>
 </html>
