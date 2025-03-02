@@ -34,9 +34,3 @@ function getAssignedNumber(id1,id2) {
     document.getElementById(id1).innerText = convertNumber - 1;
     document.getElementById(id2).innerText = assigned2 + 1; 
 };
-function getLastBtn(){
-    if(nullVar) {
-        alert('Congrats!!! You have completed all the current task');
-        return nullVar;
-    }
-}
