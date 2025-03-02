@@ -12,7 +12,7 @@ for (let btn of getTaskBtn) {
         btn.classList.remove('cursor-pointer');
         getAssignedNumber('assigned-number', 'total-checked');
         alert('Board updated successfully');
-        if(btn[getTaskBtn === getTaskBtn.length - 1]){
+        if(btn === getTaskBtn[getTaskBtn.length - 1]){
             alert('Congrats!!! You have completed all the current task')
         }
         const parentDiv = btn.parentElement;
