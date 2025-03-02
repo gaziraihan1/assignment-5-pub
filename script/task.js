@@ -1,50 +1,11 @@
 const getTaskBtn = document.querySelectorAll('.task-btn');
-let nullVar = null;
+let buttonClicked = [];
 const times = new Date();
-let hour = times.getHours();
-if(hour === 13) {
-    hour = 1
-}
-else if(hour === 14) {
-    hour = 2
-}
-else if(hour === 15) {
-    hour = 3
-}
-else if(hour === 16) {
-    hour = 4
-}
-else if(hour === 17) {
-    hour = 5
-}
-else if(hour === 18) {
-    hour = 6
-}
-else if(hour === 19) {
-    hour = 7
-}
-else if(hour === 20) {
-    hour = 8
-}
-else if(hour === 21) {
-    hour = 9
-}
-else if(hour === 22) {
-    hour = 10
-}
-else if(hour === 23) {
-    hour = 11
-}
-else if(hour === 24) {
-    hour = 12
-}
-else{
-    hour = hour
-};
+let hour = ((times.getHours() % 12 || 12) < 10 ? '0' : '') + (times.getHours() % 12 || 12);
+const minute = (times.getMinutes() < 10? '0':'') + times.getMinutes();
+const second = (times.getSeconds() < 10? '0':'') + times.getSeconds();
+const amPm = times.getHours() >= 12 ? 'PM' : 'AM';
 
-const minute = times.getMinutes();
-const second = times.getSeconds();
-const amPm = hour >= 12 ? 'PM' : 'AM';
 for (let btn of getTaskBtn) {
     btn.addEventListener('click', function (event) {
         btn.setAttribute("disabled", "true");
@@ -52,7 +13,10 @@ for (let btn of getTaskBtn) {
         btn.classList.remove('cursor-pointer');
         getAssignedNumber('assigned-number', 'total-checked');
         alert('Board updated successfully');
-        if(btn === getTaskBtn[getTaskBtn.length - 1]){
+        if(!buttonClicked.includes(btn)){
+            buttonClicked.push(btn)
+        };
+        if(buttonClicked.length === getTaskBtn.length){
             alert('Congrats!!! You have completed all the current task')
         }
         const parentDiv = event.target.parentNode.parentNode;
@@ -70,4 +34,9 @@ function getAssignedNumber(id1,id2) {
     document.getElementById(id1).innerText = convertNumber - 1;
     document.getElementById(id2).innerText = assigned2 + 1; 
 };
-
+function getLastBtn(){
+    if(nullVar) {
+        alert('Congrats!!! You have completed all the current task');
+        return nullVar;
+    }
+}
