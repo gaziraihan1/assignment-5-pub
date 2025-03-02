@@ -2,48 +2,27 @@ document.getElementById('theme-changer').addEventListener('click',function () {
     themeChanger();
 });
 
-// const day = new Date();
-// console.log(day)
-// const month = getMonth() + 1;
-// function setMonthName () {
-//     if(month === 1) {
-//         return 'Jan'
-//     }
-//     else if(month === 2) {
-//         return 'Feb'
-//     }
-//     else if(month === 3) {
-//         return 'Mar'
-//     }
-//     else if(month === 4) {
-//         return 'Apr'
-//     }
-//     else if(month === 5) {
-//         return 'May'
-//     }
-//     else if(month === 6) {
-//         return 'Jun'
-//     }
-//     else if(month === 7) {
-//         return 'Jul'
-//     }
-//     else if(month === 8) {
-//         return 'Aug'
-//     }
-//     else if(month === 9) {
-//         return 'Aug'
-//     }
-//     else if(month === 10) {
-//         return 'Sep'
-//     }
-//     else if(month === 11) {
-//         return 'Nov'
-//     }
-//     else if(month === 12) {
-//         return 'Dec'
-//     }
-// }
-// const fullYear = {
-//     date: day,
+// Time set in header
+const newDate = new Date();
+const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const dayName = days[newDate.getDay()];
+const day = newDate.getDate();
+const months = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+const month = months[newDate.getMonth()];
+const year = newDate.getFullYear();
+document.getElementById('date').innerText = `${dayName}  ,`;
+document.getElementById('full-date').innerText = `${month} ${day} ${year}`;
 
-// }
+/// Blog page redirection
+document.getElementById('blog-page').addEventListener('click', function () {
+  console.log("Redirecting to blog page");
+  window.location.href = 'blog.html';
+});
+
+// Main page redirection
+document.getElementById('home-page').addEventListener('click', function() {
+  window.location.href = 'index.html';
+})
